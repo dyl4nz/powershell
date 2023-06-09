@@ -1,0 +1,18 @@
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+$baseFileName = "youareanidiot"
+$folderName = "youareanidiot"
+$folderPath = Join-Path -Path $desktopPath -ChildPath $folderName
+
+# Create the folder if it doesn't exist
+if (-not (Test-Path -Path $folderPath -PathType Container)) {
+    New-Item -Path $folderPath -ItemType Directory | Out-Null
+}
+
+# Get all text files on the desktop with the specified base file name
+$filePaths = Get-ChildItem -Path $desktopPath -Filter "$baseFileName*.txt" -File
+
+# Move each file to the folder
+foreach ($filePath in $filePaths) {
+    $destinationPath = Join-Path -Path $folderPath -ChildPath $filePath.Name
+    Move-Item -Path $filePath.FullName -Destination $destinationPath -Force
+}

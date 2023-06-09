@@ -1,0 +1,14 @@
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+$baseFileName = "youareanidiot"
+$textContent = "lol"
+
+for ($i = 1; $i -le 200; $i++) {
+    $fileName = "{0}{1}.txt" -f $baseFileName, $i
+    $filePath = Join-Path -Path $desktopPath -ChildPath $fileName
+
+    # Create the file
+    New-Item -Path $filePath -ItemType "file"
+
+    # Set the content of the file
+    Set-Content -Path $filePath -Value $textContent
+}
