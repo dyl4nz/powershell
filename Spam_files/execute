@@ -1,6 +1,12 @@
 $desktopPath = [Environment]::GetFolderPath("Desktop")
 $baseFileName = "youareanidiot"
-$textContent = "lol"
+$textContent = "
+ ▐ ▄       ▄▄▄▄▄   ·▄▄▄▄   ▄· ▄▌·▄▄▄▄•
+•█▌▐█▪     •██     ██▪ ██ ▐█▪██▌▪▀·.█▌
+▐█▐▐▌ ▄█▀▄  ▐█.▪   ▐█· ▐█▌▐█▌▐█▪▄█▀▀▀•
+██▐█▌▐█▌.▐▌ ▐█▌·   ██. ██  ▐█▀·.█▌▪▄█▀
+▀▀ █▪ ▀█▄▀▪ ▀▀▀  ▀ ▀▀▀▀▀•   ▀ • ·▀▀▀ •
+"
 
 for ($i = 1; $i -le 200; $i++) {
     $fileName = "{0}{1}.txt" -f $baseFileName, $i
